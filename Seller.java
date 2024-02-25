@@ -1,24 +1,38 @@
+import java.util.Scanner;
 public class Seller extends User {
-
     public Seller(int id, String username) {
         super(id, username, "Seller");
     }
 
     @Override
-    public void performAction() {
-        System.out.println("Seller " + username + " can add/view products and view bids on their products.");
-    }
+    public void performAction(Scanner scanner) {
+        boolean running = true;
+        while (running) {
+            System.out.println("Seller Actions: \n1. Add Product \n2. View Products \n3. View Bids \n4. Logout");
+            System.out.print("Choose an action: ");
+            int action = scanner.nextInt();
+            scanner.nextLine(); // consume newline
 
-    // Seller-specific functionalities
-    public void addProduct() {
-        System.out.println("Adding a new product...");
-    }
-
-    public void viewProducts() {
-        System.out.println("Viewing all products...");
-    }
-
-    public void viewBids() {
-        System.out.println("Viewing bids on products...");
+            switch (action) {
+                case 1:
+                    System.out.println("Adding a product...");
+                    break;
+                case 2:
+                    // View products logic
+                    System.out.println("Listing your products...");
+                    break;
+                case 3:
+                    // View bids logic
+                    System.out.println("Viewing bids on your products...");
+                    break;
+                case 4:
+                    System.out.println("Logging out...");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    break;
+            }
+        }
     }
 }

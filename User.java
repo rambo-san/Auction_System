@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Scanner;
 
 public abstract class User {
     protected int id;
@@ -18,7 +19,7 @@ public abstract class User {
         this.role = role;
     }
 
-    public abstract void performAction();
+    public abstract void performAction(Scanner scanner);
 
     public static User login(String username, String password) {
          Connection con = null;
