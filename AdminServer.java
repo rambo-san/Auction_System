@@ -13,6 +13,7 @@ public class AdminServer {
 
             while (true) {
                 try {
+                    System.out.println("Client connected");
                     Socket clientSocket = serverSocket.accept();
                     pool.execute(new ClientHandler(clientSocket));
                 } catch (IOException e) {

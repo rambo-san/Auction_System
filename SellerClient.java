@@ -45,7 +45,7 @@ public class SellerClient {
     }
     
     public static void main(String[] args) throws IOException {
-        SellerClient seller = new SellerClient("127.0.0.1", 5000);
+        SellerClient seller = new SellerClient("127.0.0.1", 12345);
         seller.start();
     }
 }

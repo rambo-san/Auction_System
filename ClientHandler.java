@@ -35,6 +35,7 @@ public class ClientHandler extends Thread {
             pstmt.setString(2, password);
             
             ResultSet rs = pstmt.executeQuery();
+            System.out.println("Verified login");
             
             if (rs.next()) {
                 return true;
